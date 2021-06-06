@@ -8,7 +8,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace WebApplication1.Controllers
+namespace WebAPI1.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

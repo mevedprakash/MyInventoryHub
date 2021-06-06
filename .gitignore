@@ -24,4 +24,4 @@ publish/
 *.publishsettings
 Backup*/
 src/packages/*
-src/Presentation/WebApplication/appsettings.*.JSON
+*/appsettings.*.JSON
