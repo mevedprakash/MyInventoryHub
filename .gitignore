@@ -23,6 +23,5 @@ publish/
 *.pfx
 *.publishsettings
 Backup*/
-src/Presentation/vue-app/*
 src/packages/*
 src/Presentation/WebApplication/appsettings.*.JSON
