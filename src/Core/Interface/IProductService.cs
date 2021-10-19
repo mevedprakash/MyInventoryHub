@@ -18,6 +18,8 @@ namespace Interface
         Task<List<ProductDto>> GetBestSellingProducts(int days = 30);
         Task<Product> GetProduct(int productId);
         Product SaveProduct(Product product);
-    
+        void AddProductPictures(ProductPicture productPicture);
+
+
     }
 }

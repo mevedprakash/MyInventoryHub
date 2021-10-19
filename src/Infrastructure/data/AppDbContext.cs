@@ -35,6 +35,8 @@ namespace Data
         public DbSet<Unit> Unit { get; set; }
 
         public DbSet<Store> Store { get; set; }
+        public DbSet<Picture> Picture { get; set; }
+        public DbSet<ProductPicture> ProductPicture { get; set; }
 
     }
 }

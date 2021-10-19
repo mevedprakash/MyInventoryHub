@@ -122,6 +122,7 @@ namespace WebAPI1
             services.AddScoped<ISupplyService, SupplyService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IStoreService, StoreService>();
+            services.AddScoped<IStorageService, StorageService>();
 
 
         }

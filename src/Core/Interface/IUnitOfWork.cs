@@ -24,7 +24,8 @@ namespace Interface
         IRepository<Unit> UnitRepository { get; }
 
         IRepository<Store> StoreRepository { get; }
-
+        IRepository<ProductPicture> ProductPictureRepository { get; }
+        IRepository<Picture> PictureRepository { get; }
         int SaveChanges();
         Task<int> SaveChangesAsync();
 

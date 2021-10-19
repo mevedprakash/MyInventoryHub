@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Business.Services;
 using DTO;
 using Entity;
 using Interface;
@@ -22,13 +23,18 @@ namespace WebAPI.Controllers
         private readonly ILogger<ProductController> logger;
         private readonly IProductService productService;
         private readonly IMapper mapper;
+        private readonly IStorageService storageService;
 
-        public ProductController(ILogger<ProductController> logger,IProductService productService, IMapper mapper
+        public ProductController(ILogger<ProductController> logger,
+            IProductService productService, 
+            IMapper mapper,
+            IStorageService storageService
             )
         {
             this.logger = logger;
             this.productService = productService;
             this.mapper = mapper;
+            this.storageService = storageService;
         }
 
         [HttpGet("products")]
@@ -82,6 +88,26 @@ namespace WebAPI.Controllers
             return Ok(products);
         }
 
+        [HttpPost("AddProductPicture")]
+        [AllowAnonymous]
+        public async Task<ActionResult> UploadProductPicture(IFormFile file, [FromForm] int productId, [FromForm] int displayOrder)
+        {
+            if (file == null)
+            {
+                return BadRequest();
+            }
 
+            var picture = await storageService.SaveImage(file);
+            var productPicture = new ProductPicture()
+            {
+                DisplayOrder = displayOrder,
+                PictureId = picture.Id,
+                ProductId = productId
+            };
+            productService.AddProductPictures(productPicture);
+            //when returning JSON the mime-type must be set to text/plain
+            //otherwise some browsers will pop-up a "Save As" dialog.
+            return Ok();
+        }
     }
 }

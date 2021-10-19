@@ -24,6 +24,8 @@ namespace Data
 
         public IRepository<OrderItem> OrderItemRepository { get; private set; }
 
+        public IRepository<ProductPicture> ProductPictureRepository { get; private set; }
+        public IRepository<Picture> PictureRepository { get; private set; }
         private readonly AppDbContext dbContext;
         public UnitOfWork(AppDbContext dbContext)
         {
@@ -39,6 +41,8 @@ namespace Data
             UnitRepository = new Repository<Unit>(dbContext);
             StoreRepository = new Repository<Store>(dbContext);
             OrderItemRepository = new Repository<OrderItem>(dbContext);
+            ProductPictureRepository = new Repository<ProductPicture>(dbContext);
+            PictureRepository = new Repository<Picture>(dbContext);
             this.dbContext = dbContext;
         }
 

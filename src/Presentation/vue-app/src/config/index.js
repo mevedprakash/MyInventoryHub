@@ -1,5 +1,5 @@
-const  config = {
-     apiUrl : "https://localhost:44318/"
-     //apiUrl: "/"
+const config = {
+    //apiUrl : "https://localhost:44318/"
+    apiUrl: "/"
 }
-module.exports=config
+module.exports = config

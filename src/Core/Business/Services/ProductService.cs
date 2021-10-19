@@ -60,5 +60,16 @@ namespace Business.Services
                 .Take(10)
                 .ToListAsync();           
         }
+        public void AddProductPictures(ProductPicture productPicture)
+        {
+
+            if (productPicture == null)
+                throw new ArgumentNullException(nameof(productPicture));
+            unitOfWork.ProductPictureRepository.Add(productPicture);
+            unitOfWork.SaveChanges();
+            return;
+
+        }
+
     }
 }
