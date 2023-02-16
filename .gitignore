@@ -25,3 +25,4 @@ publish/
 Backup*/
 src/packages/*
 src/Presentation/WebAPI/appsettings.Development.json
+/src/Presentation/WebAPI/dist

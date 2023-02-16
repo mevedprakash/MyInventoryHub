@@ -28,7 +28,7 @@ namespace Business.DataServices
             IEmailSender emailSender
             )
         {
-            this.emailAccount = emailAccount.Value;
+            //this.emailAccount = emailAccount?.Value;
             this.unitOfWork = unitOfWork;
             this.emailSender = emailSender;
         }
